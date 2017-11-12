@@ -19,7 +19,7 @@
 
                                     @if ($errors->has('email'))
                                         <span class="form-text text-muted">
-                                            {{ $errors->first('email') }}
+                                            <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -33,7 +33,7 @@
 
                                     @if ($errors->has('password'))
                                         <span class="form-text text-muted">
-                                            {{ $errors->first('password') }}
+                                            <strong>{{ $errors->first('password') }}</strong>
                                         </span>
                                     @endif
                                 </div>
