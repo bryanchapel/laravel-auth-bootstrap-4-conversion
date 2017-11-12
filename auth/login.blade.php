@@ -8,15 +8,14 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title text-center">Login</h4>
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                 <label class="col-md-4 control-label">E-Mail Address</label>
 
                                 <div clacc="col-md-12">
-                                    <input type="email" class="form-control" name="email"
-                                           value="{{ old('email') }}">
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                     @if ($errors->has('email'))
                                         <span class="form-text text-muted">
@@ -30,7 +29,7 @@
                                 <label class="col-md-4 control-label">Password</label>
 
                                 <div>
-                                    <input type="password" class="form-control" name="password">
+                                    <input id="password" type="password" class="form-control" name="password">
 
                                     @if ($errors->has('password'))
                                         <span class="form-text text-muted">
@@ -53,7 +52,7 @@
                             <div class="form-group">
                                 <div>
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-sign-in"></i>Login
+                                        Login
                                     </button>
 
                                     <a class="btn btn-link" href="{{ route('password.request') }}">Forgot Your Password?</a>
